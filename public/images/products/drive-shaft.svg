@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <rect width="1200" height="900" fill="#F7F5F2"/>
+  
+  <g transform="translate(180,390) rotate(-8)">
+    <rect x="0" y="0" width="820" height="86" rx="8" fill="#1a1a3a"/>
+    <rect x="20" y="18" width="780" height="50" fill="#2c2c55"/>
+    <circle cx="40" cy="43" r="70" fill="#3a3a62" stroke="#05053D" stroke-width="8"/>
+    <circle cx="40" cy="43" r="38" fill="#d8d6d0"/>
+    <circle cx="40" cy="43" r="16" fill="#05053D"/>
+    <circle cx="800" cy="43" r="70" fill="#3a3a62" stroke="#05053D" stroke-width="8"/>
+    <circle cx="800" cy="43" r="38" fill="#d8d6d0"/>
+    <circle cx="800" cy="43" r="16" fill="#05053D"/>
+    <rect x="280" y="-8" width="240" height="102" fill="#0a0a40"/>
+    <rect x="300" y="12" width="200" height="62" fill="#00E6C3" opacity="0.35"/>
+  </g>
+  <text x="80" y="820" font-family="Arial" font-size="22" fill="#6B6B75" letter-spacing="4">AUTOPART ORIGINAL</text>
+
+</svg>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <rect width="1200" height="900" fill="#F7F5F2"/>
+  
+  <rect width="1200" height="900" fill="#fff"/>
+  <text x="600" y="430" text-anchor="middle" font-family="Arial Black, Arial" font-size="64" fill="#05053D" letter-spacing="4">HAMBURG MOTORS</text>
+  <text x="600" y="500" text-anchor="middle" font-family="Arial" font-size="22" fill="#6B6B75" letter-spacing="8">PREMIUM WORKSHOP</text>
+
+</svg>
