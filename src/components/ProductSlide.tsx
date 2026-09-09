@@ -11,7 +11,7 @@ type ProductSlideProps = {
 export function ProductSlide({ product, index, total }: ProductSlideProps) {
   return (
     <article className="grid border border-line/15 bg-white lg:grid-cols-[1.15fr_0.85fr]">
-      <div className="relative min-h-[360px] overflow-hidden bg-off-white lg:min-h-[560px]">
+      <div className="relative min-h-[360px] overflow-hidden bg-white lg:min-h-[560px]">
         <span className="absolute left-6 top-6 z-10 text-sm tracking-[0.16em] text-muted">
           {String(index + 1).padStart(2, "0")} – {String(total).padStart(2, "0")}
         </span>
@@ -28,6 +28,9 @@ export function ProductSlide({ product, index, total }: ProductSlideProps) {
           className="object-contain p-10 lg:p-16"
           sizes="(min-width: 1024px) 55vw, 100vw"
         />
+        <span className="absolute bottom-6 left-6 z-10 text-xs font-semibold uppercase tracking-[0.16em] text-muted">
+          MEYLE {product.category}
+        </span>
       </div>
       <div className="flex flex-col justify-center border-t border-line/15 px-6 py-10 lg:border-t-0 lg:border-l lg:px-12">
         <p className="eyebrow text-muted">{product.category}</p>

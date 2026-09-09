@@ -8,7 +8,7 @@ export default function ContentPage() {
       <PageHero
         eyebrow="Content Hub"
         title={"Knowledge\nfor professionals."}
-        description="Blog posts, videos, press releases, whitepapers and installation instructions – expert knowledge from AUTOPART."
+        description="Blog posts, videos, press releases, whitepapers and installation instructions – expert knowledge from MEYLE."
       />
       <section className="px-5 py-16 lg:px-10 xl:px-14">
         <ContentBrowser />

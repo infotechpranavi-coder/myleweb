@@ -56,6 +56,7 @@ export function SmartImage({
       loading={resolvedLoading}
       fetchPriority={resolvedFetchPriority}
       sizes={sizes}
+      unoptimized
     />
   );
 }

@@ -19,14 +19,14 @@ export function Hero() {
           >
             <p className="eyebrow text-white/70">Driven by partnership</p>
             <h1 className="hero-title mt-5 text-[clamp(3rem,7.4vw,6.6rem)]">
-              AUTOPART:
+              MEYLE:
               <br />
               Partnership.
               <br />
               Reimagined.
             </h1>
             <p className="mt-8 max-w-md text-base leading-7 text-white/75 md:text-lg">
-              AUTOPART is your partner in the independent aftermarket – with
+              MEYLE is your partner in the independent aftermarket – with
               high-quality parts, reliable data, and true collaboration.
               Engineered in Hamburg, trusted worldwide.
             </p>
@@ -43,8 +43,8 @@ export function Hero() {
           transition={{ duration: 1, ease: easeOutExpo }}
         >
           <SmartImage
-            src="/images/hero/mechanic.jpg"
-            alt="AUTOPART partner in an independent automotive workshop"
+            src="/taklaphto/Raulf_Startseite_Querlenker.webp"
+            alt="MEYLE partner in an independent automotive workshop"
             fill
             loading="eager"
             fetchPriority="high"

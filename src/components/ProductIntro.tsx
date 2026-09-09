@@ -3,17 +3,14 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function ProductIntro() {
   return (
-    <section className="border-b border-line/15 bg-white px-5 py-16 lg:px-10 lg:py-24 xl:px-14">
+    <section className="bg-off-white px-5 pt-16 lg:px-10 lg:pt-24 xl:px-14">
       <Reveal>
-        <div className="mx-auto flex max-w-[1680px] flex-col justify-between gap-10 lg:flex-row lg:items-end">
+        <div className="mx-auto max-w-[1680px]">
           <SectionHeading
-            title={
-              "4 areas - one goal:\nPrecision that makes a\ndifference"
-            }
+            title={"4 areas - one goal:\nPrecision that makes a\ndifference"}
+            description="MEYLE HD, MEYLE PD, MEYLE ORIGINAL and MEYLE KITs offer spare parts for the highest demands: Yours. Discover the latest highlight products."
+            className="max-w-5xl"
           />
-          <p className="max-w-md text-base leading-7 text-muted lg:mb-2 lg:text-lg">
-            AUTOPART HD, AUTOPART PD, AUTOPART ORIGINAL and AUTOPART KITs offer spare parts for the highest demands: Yours. Discover the latest highlight products.
-          </p>
         </div>
       </Reveal>
     </section>

@@ -149,10 +149,10 @@ export const products: Product[] = [
   {
     number: "01",
     category: "ORIGINAL",
-    title: "AUTOPART ORIGINAL drive shaft Volvo XC60 I",
+    title: "MEYLE ORIGINAL drive shaft Volvo XC60 I",
     description:
-      "AUTOPART ORIGINAL drive shafts for the Volvo XC60 I: top quality and outstanding traction with ball spline technology. Lightweight design for optimal driving dynamics and efficiency.",
-    image: "/images/products/drive-shaft.svg",
+      "MEYLE ORIGINAL drive shafts for the Volvo XC60 I: top quality and outstanding traction with ball spline technology. Lightweight design for optimal driving dynamics and efficiency.",
+    image: "/images/products/meyle-original-drive-shaft-volvo-white.webp",
     href: "/products/original",
     groups: ["drive-components"],
     highlights: [
@@ -164,10 +164,10 @@ export const products: Product[] = [
   {
     number: "02",
     category: "PD",
-    title: "AUTOPART PD HEPA cabin air filter set Tesla Model Y",
+    title: "MEYLE PD HEPA cabin air filter set Tesla Model Y",
     description:
-      "The AUTOPART HEPA cabin air filter set for the Tesla Model Y: captures NOx and the hearts of customers. 2 pre-filters + 2 HEPA filters – ideal for workshops and drivers.",
-    image: "/images/products/cabin-filter.svg",
+      "The MEYLE HEPA cabin air filter set for the Tesla Model Y: captures NOx and the hearts of customers! 2 pre-filters + 2 HEPA filters – ideal for workshops and drivers!",
+    image: "/images/products/hepa-filtersatz.webp",
     href: "/products/pd",
     groups: ["filters", "electromobility"],
     highlights: [
@@ -180,10 +180,10 @@ export const products: Product[] = [
   {
     number: "03",
     category: "HD",
-    title: "AUTOPART HD rear axle control arm for the VW Group",
+    title: "MEYLE HD rear axle control arm for vehicles of the VW Group",
     description:
-      "AUTOPART HD rear axle control arm for Golf, Octavia, Leon and more, with zinc flake coating for longer service life. Increased safety, higher material durability and better protection against corrosion.",
-    image: "/images/products/control-arm.svg",
+      "MEYLE HD rear axle control arm for Golf, Octavia, Leon and more, with zinc flake coating for longer service life! Increased safety, higher material durability and better protection against corrosion. Quality for high standards.",
+    image: "/images/products/hd-control-arm-vw.png",
     href: "/products/hd",
     groups: ["steering-and-suspension-parts", "electromobility"],
     highlights: [
@@ -195,14 +195,14 @@ export const products: Product[] = [
   {
     number: "04",
     category: "HD / ORIGINAL",
-    title: "AUTOPART HD and ORIGINAL pre-assembled tie rods",
+    title: "MEYLE HD and ORIGINAL pre-assembled tie rods",
     description:
-      "Take the hassle out of tie rod replacement – with the pre-assembled AUTOPART tie rod. Quick and easy installation paired with high durability and reliability.",
-    image: "/images/products/tie-rod.svg",
+      "Take the hassle out of tie rod replacement – with the pre-assembled MEYLE tie rod. Quick and easy installation paired with high durability and reliability. Available as MEYLE ORIGINAL and MEYLE HD.",
+    image: "/images/products/preassembled-tie-rod.png",
     href: "/products/hd",
     groups: ["steering-and-suspension-parts"],
     highlights: [
-      "Everything you need, including attachment parts, under a single number",
+      "Everything you need, including attachment parts, under a single number, which saves you time",
       "All-in-one solution reduces packaging, storage and transport costs",
       "Also available in the enhanced HD variant",
     ],
@@ -210,74 +210,38 @@ export const products: Product[] = [
   {
     number: "05",
     category: "KIT",
-    title: "AUTOPART ORIGINAL oil change kit for Tesla",
+    title: "MEYLE ORIGINAL oil change kit for Tesla",
     description:
-      "Everything you need: the AUTOPART oil change kit for the Tesla drive unit. Simple oil change with filter, magnetic drain plug and all necessary parts.",
-    image: "/images/products/oil-kit.svg",
+      "Everything you need: the MEYLE oil change kit for the Tesla drive unit. Simple oil change with filter, magnetic drain plug and all necessary parts.",
+    image: "/images/products/meyle-tesla-oil-kit.png",
     href: "/products/kits",
     groups: ["electromobility", "drive-components"],
     highlights: [
       "Complete package: all parts incl. filter and magnetic drain plug",
       "Complies with Tesla OE standards",
-      "Efficient and reliable maintenance for Tesla models S/3/X/Y",
+      "Efficient & reliable maintenance for Tesla models S/3/X/Y",
     ],
   },
   {
     number: "06",
     category: "ORIGINAL",
-    title: "AUTOPART ORIGINAL oil stop cable for Mercedes-Benz",
+    title: "MEYLE ORIGINAL oil stop cable for Mercedes-Benz",
     description:
-      "Oil in the control unit? Not with us. The AUTOPART ORIGINAL oil stop cable reliably prevents costly damage from leaking engine oil – simple, effective and tool-free installation.",
-    image: "/images/products/oil-cable.svg",
+      "Oil in the control unit? Not with us! The MEYLE ORIGINAL oil stop cable reliably prevents costly damage from leaking engine oil – simple, effective and tool-free installation. Ideal for over 5 million Mercedes-Benz vehicles in Europe to enjoy a long service life.",
+    image: "/images/products/meyle-oil-stop-cable-white.png",
     href: "/products/original",
     groups: ["electronics"],
     highlights: [
       "Sturdy metal core effectively stops oil from spreading in the wiring harness",
       "Protects sensors, actuators and the engine control unit",
       "Easy, tool-free plug-and-play installation",
-      "Precision fit for Mercedes-Benz engines M111, M271, M272, M273",
+      "Precision fit for Mercedes-Benz engines M111, M271, M272, M273 (C-Class, CLK-Class, CLS-Class, E-Class and Sprinter, among others)",
     ],
   },
 ];
 
-export type NewsItem = {
-  id: string;
-  category: string;
-  title: string;
-  image: string;
-  href: string;
-};
-
-export const news: NewsItem[] = [
-  {
-    id: "air-suspension",
-    category: "Blog post",
-    title: "Air suspension: seize the market opportunities now",
-    image: "/images/news/air-suspension.jpg",
-    href: "/content",
-  },
-  {
-    id: "zinc",
-    category: "Blog post",
-    title: "Zinc flake coatings: the anti-corrosion solution?",
-    image: "/images/news/zinc.jpg",
-    href: "/content",
-  },
-  {
-    id: "transmission",
-    category: "Blog post",
-    title: "Transmission flushing versus transmission oil change",
-    image: "/images/news/transmission.jpg",
-    href: "/content",
-  },
-  {
-    id: "filters",
-    category: "Blog post",
-    title: "Not all filters are the same - how do you find the right one?",
-    image: "/images/news/filters.jpg",
-    href: "/content",
-  },
-];
+export { newsArticles as news } from "@/data/news";
+export type { NewsItem } from "@/data/news";
 
 export type Testimonial = {
   quote: string;
