@@ -38,16 +38,45 @@ export function Testimonials() {
             </button>
           </div>
         </div>
-        <div className="mt-12 grid items-stretch border border-line/15 lg:grid-cols-[0.7fr_1.3fr]">
-          <div className="flex items-center justify-center bg-off-white p-10">
-            <div className="relative h-24 w-64">
+        <div className="mt-12 grid items-stretch border border-line/15 lg:grid-cols-[0.85fr_1.15fr]">
+          <div
+            className={cn(
+              "relative overflow-hidden bg-off-white",
+              item.imageFit === "cover"
+                ? "min-h-[280px] lg:min-h-[420px]"
+                : "flex min-h-[280px] items-center justify-center px-6 py-10 lg:min-h-[420px] lg:px-10",
+            )}
+          >
+            {item.imageFit === "cover" ? (
               <SmartImage
                 src={item.logo}
-                alt={`${item.company} logo`}
+                alt={`${item.company}`}
                 fill
-                className="object-contain"
+                className="object-cover object-center"
+                sizes="(min-width: 1024px) 40vw, 100vw"
               />
-            </div>
+            ) : (
+              <div
+                key={item.logo}
+                className="relative h-56 w-full max-w-[42rem] shrink-0 sm:h-64 lg:h-80"
+                style={
+                  item.imageScale
+                    ? { transform: `scale(${item.imageScale})` }
+                    : undefined
+                }
+              >
+                <SmartImage
+                  src={item.logo}
+                  alt={`${item.company} logo`}
+                  fill
+                  className={cn(
+                    "object-contain",
+                    !item.imageScale && "scale-125",
+                  )}
+                  sizes="(min-width: 1024px) 640px, 90vw"
+                />
+              </div>
+            )}
           </div>
           <div className="relative overflow-hidden bg-deep-navy p-8 text-white md:p-14">
             <span className="pointer-events-none absolute right-6 top-0 font-display text-[9rem] leading-none text-turquoise/20">

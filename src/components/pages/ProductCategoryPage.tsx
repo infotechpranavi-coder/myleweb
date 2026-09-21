@@ -4,13 +4,15 @@ import { Marquee } from "@/components/Marquee";
 import { ProductCard } from "@/components/ProductSlide";
 import {
   BenefitRow,
+  CategoryOpener,
   ClosingColumns,
   DiscoverMore,
-  GroupPhotoCard,
+  FeaturedKits,
+  GroupZigzag,
   IntroWithContact,
   JumpNav,
-  ProductPhotoHero,
   TrainingStrip,
+  UpgradeSplit,
 } from "@/components/pages/product-sections";
 import { InnerEnd } from "@/components/ui/SplitSection";
 import type { ProductCategory } from "@/data/categories";
@@ -27,8 +29,7 @@ export function ProductCategoryPage({
 
   return (
     <>
-      <ProductPhotoHero
-        label={category.navLabel}
+      <CategoryOpener
         title={category.headline}
         description={category.description}
         image={category.image}
@@ -39,6 +40,7 @@ export function ProductCategoryPage({
         items={[
           { href: "#benefits", label: "Benefits" },
           { href: "#products", label: "Products" },
+          { href: "#iam", label: "IAM" },
           { href: "#workshops", label: "Workshops" },
         ]}
       />
@@ -46,33 +48,24 @@ export function ProductCategoryPage({
         title={category.introTitle}
         body={category.introBody}
         standFor={category.standFor}
-        topic={`AUTOPART ${category.navLabel.toLowerCase()}`}
+        topic={`MEYLE ${category.navLabel.toLowerCase()}`}
       />
       <BenefitRow benefits={category.benefits} />
-      <section id="products" className="border-b border-line/15 px-5 py-16 lg:px-10 xl:px-14">
-        <div className="mx-auto max-w-[1680px]">
-          <h2 className="font-display text-[clamp(2rem,4.2vw,3.8rem)] font-black italic uppercase leading-[0.95]">
-            {category.upgradeTitle}
-          </h2>
-          <p className="mt-6 max-w-3xl text-[15px] leading-7 text-muted">
-            {category.upgradeBody}
-          </p>
-        </div>
-      </section>
-      <section className="grid border-b border-line/15 md:grid-cols-2">
-        {category.groups.map((group) => (
-          <GroupPhotoCard
-            key={group.slug}
-            href={`/products/${category.slug}/${group.slug}`}
-            title={group.title}
-            text={group.cardText}
-            image={group.image}
-            imageAlt={group.title}
-          />
-        ))}
-      </section>
-      {related.length ? (
-        <section className="border-b border-line/15 px-5 py-16 lg:px-10 xl:px-14">
+      <UpgradeSplit
+        title={category.upgradeTitle}
+        body={category.upgradeBody}
+        image={category.upgradeImage ?? category.image}
+        imageAlt={category.upgradeTitle}
+        tips={category.benefits.slice(0, 1).concat(category.benefits.slice(2, 3))}
+      />
+      <GroupZigzag groups={category.groups} categorySlug={category.slug} />
+      {category.featuredKits?.length ? (
+        <FeaturedKits kits={category.featuredKits} />
+      ) : related.length ? (
+        <section
+          id="iam"
+          className="border-b border-line/15 px-5 py-16 lg:px-10 xl:px-14"
+        >
           <div className="mx-auto max-w-[1680px]">
             <h2 className="font-display text-[clamp(2rem,4vw,3.4rem)] font-black italic uppercase">
               Highlights
@@ -84,10 +77,15 @@ export function ProductCategoryPage({
             </div>
           </div>
         </section>
-      ) : null}
+      ) : (
+        <div id="iam" />
+      )}
       <Marquee phrase={category.marquee} />
       <ClosingColumns left={category.closing[0]} right={category.closing[1]} />
-      <TrainingStrip title={category.training.title} body={category.training.body} />
+      <TrainingStrip
+        title={category.training.title}
+        body={category.training.body}
+      />
       <DiscoverMore />
       <section className="px-5 py-12 lg:px-10 xl:px-14">
         <ArrowButton href="/parts-catalog">Visit parts catalog</ArrowButton>

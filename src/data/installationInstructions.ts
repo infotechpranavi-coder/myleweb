@@ -1,0 +1,307 @@
+export type ContentHubItem = {
+  id: string;
+  slug: string;
+  title: string;
+  date: string;
+  topic: string;
+  contentType: (typeof contentHubTypes)[number];
+  href: string;
+  image: string;
+  itemCount?: number;
+  pdfLabel?: string;
+  note?: string;
+  itemNumbers?: string[];
+};
+
+/** @deprecated Use ContentHubItem */
+export type InstallationInstruction = ContentHubItem;
+
+export const contentHubTopics = [
+  "All",
+  "Electric Mobility",
+  "Thermal management & engine cooling",
+  "Drive parts",
+  "Motorsport",
+  "The company",
+  "Steering and Suspension",
+  "Suspension and damping parts",
+  "IAM:Connect",
+  "Electronics",
+  "Brake",
+  "Trade fairs and events",
+] as const;
+
+export const contentHubTypes = [
+  "All",
+  "Products",
+  "Advisor",
+  "Blog post",
+  "Handouts & checklists",
+  "Press release",
+  "Videos",
+  "Poster",
+  "Whitepaper",
+  "Page",
+  "Installation instruction",
+] as const;
+
+const installs: ContentHubItem[] = [
+  {
+    id: "abs-wheel-sensor",
+    slug: "abs-wheel-sensor",
+    title: "ABS wheel sensor",
+    date: "04/23/2025",
+    topic: "Electronics",
+    contentType: "Installation instruction",
+    href: "/content/installation-instructions/abs-wheel-sensor",
+    itemCount: 295,
+    image: "/images/meyle/content/fallback-1.webp",
+    pdfLabel: "Installation instruction for ABS wheel sensor (pdf, 116.8 kB)",
+    note: "Installation must only be carried out by trained professionals. Follow the vehicle manufacturer's instructions carefully.",
+    itemNumbers: [
+      "014 800 0091",
+      "014 800 0092",
+      "014 800 0093",
+      "014 800 0094",
+      "114 800 0004",
+      "314 800 0039",
+    ],
+  },
+  {
+    id: "flush-tool-cooling",
+    slug: "flush-tool-cooling-circuit",
+    title: "Flush tool, cooling circuit",
+    date: "03/12/2025",
+    topic: "Thermal management & engine cooling",
+    contentType: "Installation instruction",
+    href: "/content/installation-instructions/flush-tool-cooling-circuit",
+    itemCount: 2,
+    image: "/images/meyle/content/fallback-2.webp",
+    pdfLabel: "Installation instruction for Flush tool, cooling circuit (pdf, 76.7 kB)",
+  },
+  {
+    id: "preassembled-tie-rod",
+    slug: "pre-assembled-tie-rod",
+    title: "Pre-assembled tie rod",
+    date: "02/18/2025",
+    topic: "Steering and Suspension",
+    contentType: "Installation instruction",
+    href: "/content/installation-instructions/pre-assembled-tie-rod",
+    itemCount: 48,
+    image: "/images/meyle/workshops/highlights/04-tie-rod.webp",
+  },
+  {
+    id: "hd-control-arm-tesla",
+    slug: "hd-control-arm-tesla",
+    title: "MEYLE HD control arm Tesla Model 3 / Y",
+    date: "01/30/2025",
+    topic: "Steering and Suspension",
+    contentType: "Installation instruction",
+    href: "/content/installation-instructions/hd-control-arm-tesla",
+    itemCount: 4,
+    image: "/images/meyle/content/fallback-6.webp",
+  },
+  {
+    id: "oil-stop-cable",
+    slug: "oil-stop-cable-mercedes",
+    title: "Oil stop cable Mercedes-Benz",
+    date: "01/14/2025",
+    topic: "Electronics",
+    contentType: "Installation instruction",
+    href: "/content/installation-instructions/oil-stop-cable-mercedes",
+    itemCount: 12,
+    image: "/images/meyle/workshops/highlights/06-oil-stop.webp",
+  },
+  {
+    id: "electric-motor-tailgate-1",
+    slug: "electric-motor-tailgate-1",
+    title: "Electric Motor, tailgate",
+    date: "08/19/2026",
+    topic: "Electric Mobility",
+    contentType: "Installation instruction",
+    href: "/content/installation-instructions/electric-motor-tailgate-1",
+    itemCount: 1,
+    image: "/images/meyle/content/fallback-1.webp",
+  },
+  {
+    id: "electric-motor-tailgate-2",
+    slug: "electric-motor-tailgate-2",
+    title: "Electric Motor, tailgate",
+    date: "08/19/2026",
+    topic: "Electric Mobility",
+    contentType: "Installation instruction",
+    href: "/content/installation-instructions/electric-motor-tailgate-2",
+    itemCount: 1,
+    image: "/images/meyle/content/fallback-2.webp",
+  },
+  {
+    id: "electric-motor-tailgate-3",
+    slug: "electric-motor-tailgate-3",
+    title: "Electric Motor, tailgate",
+    date: "08/19/2026",
+    topic: "Electric Mobility",
+    contentType: "Installation instruction",
+    href: "/content/installation-instructions/electric-motor-tailgate-3",
+    itemCount: 1,
+    image: "/images/meyle/content/fallback-3.webp",
+  },
+  {
+    id: "electric-motor-tailgate-4",
+    slug: "electric-motor-tailgate-4",
+    title: "Electric Motor, tailgate",
+    date: "08/19/2026",
+    topic: "Electric Mobility",
+    contentType: "Installation instruction",
+    href: "/content/installation-instructions/electric-motor-tailgate-4",
+    itemCount: 1,
+    image: "/images/meyle/content/fallback-4.webp",
+  },
+  {
+    id: "rear-axle-control-arm",
+    slug: "hd-rear-axle-control-arm-vw",
+    title: "HD rear axle control arm VW Group",
+    date: "12/05/2024",
+    topic: "Steering and Suspension",
+    contentType: "Installation instruction",
+    href: "/content/installation-instructions/hd-rear-axle-control-arm-vw",
+    itemCount: 18,
+    image: "/images/meyle/workshops/highlights/03-control-arm.webp",
+  },
+  {
+    id: "drive-shaft-volvo",
+    slug: "drive-shaft-volvo-xc60",
+    title: "Drive shaft Volvo XC60 I",
+    date: "11/20/2024",
+    topic: "Drive parts",
+    contentType: "Installation instruction",
+    href: "/content/installation-instructions/drive-shaft-volvo-xc60",
+    itemCount: 6,
+    image: "/images/meyle/workshops/highlights/01-drive-shaft.webp",
+  },
+  {
+    id: "hepa-filter-tesla",
+    slug: "hepa-cabin-filter-tesla",
+    title: "HEPA cabin air filter set Tesla Model Y",
+    date: "10/08/2024",
+    topic: "Electric Mobility",
+    contentType: "Installation instruction",
+    href: "/content/installation-instructions/hepa-cabin-filter-tesla",
+    itemCount: 3,
+    image: "/images/meyle/workshops/highlights/02-hepa.webp",
+  },
+  {
+    id: "oil-change-kit-tesla",
+    slug: "oil-change-kit-tesla",
+    title: "Oil change kit for Tesla drive unit",
+    date: "09/22/2024",
+    topic: "Drive parts",
+    contentType: "Installation instruction",
+    href: "/content/installation-instructions/oil-change-kit-tesla",
+    itemCount: 8,
+    image: "/images/meyle/content/fallback-5.webp",
+  },
+];
+
+const videos: ContentHubItem[] = [
+  {
+    id: "video-abs-kit",
+    slug: "video-abs-sensor-repair-kit",
+    title: "MEYLE ABS sensor repair kit - repairing instead of replacing",
+    date: "05/29/2020",
+    topic: "Electronics",
+    contentType: "Videos",
+    href: "/content/videos",
+    image: "/images/meyle/content/fallback-3.webp",
+  },
+  {
+    id: "video-abs-detector",
+    slug: "meyle-video-abs-detector-card",
+    title: "How to use an ABS detector card",
+    date: "06/16/2026",
+    topic: "Electronics",
+    contentType: "Videos",
+    href: "/content/videos",
+    image: "/images/meyle/content/fallback-4.webp",
+  },
+  {
+    id: "video-wheel-bearing",
+    slug: "meyle-video-wheel-bearing-replacement",
+    title: "Wheel bearing replacement with MEYLE Repair Kit",
+    date: "03/10/2025",
+    topic: "Steering and Suspension",
+    contentType: "Videos",
+    href: "/content/videos",
+    image: "/images/meyle/workshops/highlights/03-control-arm.webp",
+  },
+  {
+    id: "video-tesla-hd",
+    slug: "hd-control-arm-tesla-video",
+    title: "MEYLE HD control arms for Tesla Model 3 and Model Y",
+    date: "02/10/2025",
+    topic: "Electric Mobility",
+    contentType: "Videos",
+    href: "/content/videos",
+    image: "/images/meyle/workshops/mega-tesla-hd.webp",
+  },
+  {
+    id: "video-oil-kits",
+    slug: "automatic-transmission-oil-change-video",
+    title: "Automatic transmission oil change – complete & easy to install",
+    date: "11/05/2024",
+    topic: "Drive parts",
+    contentType: "Videos",
+    href: "/content/videos",
+    image: "/images/meyle/workshops/mega-oil-kits.webp",
+  },
+];
+
+const blogs: ContentHubItem[] = [
+  {
+    id: "blog-air-suspension",
+    slug: "air-suspension-seize-the-market-opportunities-now",
+    title: "Air suspension in the IAM – market potential, benefits, trends",
+    date: "01/29/2026",
+    topic: "Suspension and damping parts",
+    contentType: "Blog post",
+    href: "/content/air-suspension-seize-the-market-opportunities-now",
+    image: "/images/news/air-suspension.jpg",
+  },
+  {
+    id: "blog-zinc",
+    slug: "zinc-flake-coatings-the-anti-corrosion-solution",
+    title: "Zinc flake coatings: the anti-corrosion solution?",
+    date: "11/27/2024",
+    topic: "Steering and Suspension",
+    contentType: "Blog post",
+    href: "/content/zinc-flake-coatings-the-anti-corrosion-solution",
+    image: "/images/news/zinc.jpg",
+  },
+  {
+    id: "blog-transmission",
+    slug: "transmission-flushing-versus-transmission-oil-change",
+    title: "Transmission flushing versus transmission oil change",
+    date: "10/25/2024",
+    topic: "Drive parts",
+    contentType: "Blog post",
+    href: "/content/transmission-flushing-versus-transmission-oil-change",
+    image: "/images/news/transmission.jpg",
+  },
+  {
+    id: "blog-filters",
+    slug: "not-all-filters-are-the-same-how-do-you-find-the-right-one",
+    title: "Not all filters are the same - how do you find the right one?",
+    date: "09/12/2024",
+    topic: "Thermal management & engine cooling",
+    contentType: "Blog post",
+    href: "/content/not-all-filters-are-the-same-how-do-you-find-the-right-one",
+    image: "/images/news/filters.jpg",
+  },
+];
+
+export const installationInstructions = installs;
+
+export const contentHubItems: ContentHubItem[] = [
+  ...blogs,
+  ...videos,
+  ...installs,
+];

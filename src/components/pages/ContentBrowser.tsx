@@ -11,40 +11,44 @@ const extra: NewsItem[] = [
     slug: "pre-assembled-tie-rod-installation",
     category: "Installation instructions",
     title: "Pre-assembled tie rod: installation in three steps",
-    image: "/images/news/zinc.jpg",
-    href: "/content/zinc-flake-coatings-the-anti-corrosion-solution",
+    image: "/images/meyle/workshops/highlights/04-tie-rod.webp",
+    href: "/content/installation-instructions",
     excerpt: "A practical guide to installing pre-assembled MEYLE tie rods.",
     date: "10.11.2025",
-    body: [],
+    body: [] as NewsItem["body"],
   },
   {
     id: "video",
     slug: "hd-control-arm-replacement",
     category: "Videos",
-    title: "HD control arm replacement – no squeaking noises",
-    image: "/images/news/air-suspension.jpg",
-    href: "/content/air-suspension-seize-the-market-opportunities-now",
+    title: "MEYLE HD control arms for Tesla Model 3 and Model Y",
+    image: "/images/meyle/workshops/mega-tesla-hd.webp",
+    href: "/content/videos",
     excerpt: "Watch how MEYLE HD control arms solve common squeaking issues.",
     date: "02.10.2025",
-    body: [],
+    body: [] as NewsItem["body"],
   },
   {
     id: "whitepaper",
     slug: "data-quality-in-the-iam",
     category: "Whitepapers",
     title: "Data quality in the independent aftermarket",
-    image: "/images/news/filters.jpg",
+    image: "/images/meyle/workshops/data.webp",
     href: "/content/not-all-filters-are-the-same-how-do-you-find-the-right-one",
     excerpt: "Why precise product data reduces returns and downtime.",
     date: "18.09.2025",
-    body: [],
+    body: [] as NewsItem["body"],
   },
 ];
 
 const items = [...newsArticles, ...extra];
 
-export function ContentBrowser() {
-  const [type, setType] = useState<(typeof contentTypes)[number]>("All");
+export function ContentBrowser({
+  initialType = "All",
+}: {
+  initialType?: (typeof contentTypes)[number];
+}) {
+  const [type, setType] = useState<(typeof contentTypes)[number]>(initialType);
   const [query, setQuery] = useState("");
 
   const filtered = useMemo(

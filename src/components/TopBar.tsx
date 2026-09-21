@@ -37,20 +37,23 @@ export function TopBar() {
               role="listbox"
               className="absolute right-0 z-50 min-w-44 border border-line/15 bg-white py-2 shadow-none"
             >
-              {languages.map((item) => (
-                <li key={item}>
-                  <button
-                    type="button"
-                    className="block w-full px-4 py-2 text-left text-xs uppercase tracking-[0.12em] hover:bg-off-white"
-                    onClick={() => {
-                      setLanguage(item);
-                      setOpen(false);
-                    }}
-                  >
-                    {item}
-                  </button>
-                </li>
-              ))}
+              {languages
+                .filter((item) => item !== language)
+                .map((item) => (
+                  <li key={item}>
+                    <button
+                      type="button"
+                      role="option"
+                      className="block w-full px-4 py-2 text-left text-xs uppercase tracking-[0.12em] hover:bg-off-white"
+                      onClick={() => {
+                        setLanguage(item);
+                        setOpen(false);
+                      }}
+                    >
+                      {item}
+                    </button>
+                  </li>
+                ))}
             </ul>
           ) : null}
         </div>

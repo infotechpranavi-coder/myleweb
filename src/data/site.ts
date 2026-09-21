@@ -7,7 +7,15 @@ export type NavChild = {
 export type MegaColumn = {
   title: string;
   items: NavChild[];
-  layout?: "list" | "featured";
+  layout?: "list" | "featured" | "topics";
+  topicsTitle?: string;
+  footerLink?: { label: string; href: string };
+  topics?: {
+    tag: string;
+    title: string;
+    href: string;
+    image: string;
+  }[];
 };
 
 export type MainNavItem = {
@@ -45,22 +53,22 @@ export const productCategories: NavChild[] = [
 
 export const productLines: NavChild[] = [
   {
-    label: "AUTOPART HD",
+    label: "MEYLE HD",
     href: "/products/hd",
     description: "Technically optimized parts with a 4-year guarantee",
   },
   {
-    label: "AUTOPART ORIGINAL",
+    label: "MEYLE ORIGINAL",
     href: "/products/original",
     description: "Quality-tested, robust and durable",
   },
   {
-    label: "AUTOPART PD",
+    label: "MEYLE PD",
     href: "/products/pd",
     description: "More performance and a sophisticated look",
   },
   {
-    label: "AUTOPART KIT",
+    label: "MEYLE KIT",
     href: "/products/kits",
     description: "Save time and money in everyday workshop life",
   },
@@ -80,12 +88,27 @@ export const mainNav: MainNavItem[] = [
     href: "/quality",
     columns: [
       {
-        title: "Quality",
+        title: "MEYLE engineering",
+        layout: "topics",
         items: [
           { label: "Product development", href: "/quality/product-development" },
           { label: "Manufacturer expertise", href: "/quality/manufacturer-expertise" },
           { label: "Quality management", href: "/quality/quality-management" },
           { label: "Data management", href: "/quality/data-management" },
+        ],
+        topics: [
+          {
+            tag: "Blog post",
+            title: "The MEYLE HD re-engineering process",
+            href: "/products/hd",
+            image: "/images/meyle/quality/blog-hd-process.webp",
+          },
+          {
+            tag: "Blog post",
+            title: "Zinc flake coatings: the anti-corrosion solution?",
+            href: "/content/zinc-flake-coatings-the-anti-corrosion-solution",
+            image: "/images/meyle/quality/blog-zinc.webp",
+          },
         ],
       },
     ],
@@ -95,11 +118,45 @@ export const mainNav: MainNavItem[] = [
     href: "/workshops",
     columns: [
       {
-        title: "Workshops",
+        title: "Service",
         items: [
           { label: "Advantages for workshops", href: "/workshops" },
           { label: "Trainings", href: "/workshops/trainings" },
         ],
+      },
+      {
+        title: "Contenthub",
+        items: [
+          {
+            label: "Installation instructions",
+            href: "/content/installation-instructions",
+          },
+          { label: "Videos", href: "/content/videos" },
+        ],
+        footerLink: { label: "All contents", href: "/content" },
+      },
+      {
+        title: "Also interesting",
+        layout: "topics",
+        topicsTitle: "Also interesting",
+        items: [],
+        topics: [
+          {
+            tag: "Products",
+            title:
+              "MEYLE oil change kits for automatic transmissions – complete & easy to install",
+            href: "/products/drive-components",
+            image: "/images/meyle/workshops/mega-oil-kits.webp",
+          },
+          {
+            tag: "Videos",
+            title:
+              "MEYLE HD control arms for Tesla Model 3 and Model Y – No squeaking noises, 4-year warranty",
+            href: "/content/videos",
+            image: "/images/meyle/workshops/mega-tesla-hd.webp",
+          },
+        ],
+        footerLink: { label: "Visit Content Hub", href: "/content" },
       },
     ],
   },
@@ -108,11 +165,27 @@ export const mainNav: MainNavItem[] = [
     href: "/wholesale",
     columns: [
       {
-        title: "Wholesale",
+        title: "Service",
         items: [
-          { label: "Advantages for wholesalers", href: "/wholesale#advantages" },
+          { label: "Advantages for wholesalers", href: "/wholesale" },
           { label: "Consulting", href: "/wholesale#consulting" },
         ],
+      },
+      {
+        title: "Contenthub",
+        items: [
+          {
+            label: "Installation instructions",
+            href: "/content/installation-instructions",
+          },
+          { label: "Videos", href: "/content/videos" },
+        ],
+        footerLink: { label: "All contents", href: "/content" },
+      },
+      {
+        title: "Upcoming events",
+        items: [],
+        footerLink: { label: "All events", href: "/about/events" },
       },
     ],
   },
@@ -124,7 +197,7 @@ export const mainNav: MainNavItem[] = [
         title: "About us",
         items: [
           { label: "Who we are", href: "/about" },
-          { label: "AUTOPART worldwide", href: "/about/worldwide" },
+          { label: "MEYLE worldwide", href: "/about/worldwide" },
           { label: "Sustainability", href: "/about/sustainability" },
           { label: "Donation & funding partnerships", href: "/about/partnerships" },
           { label: "Events", href: "/about/events" },
@@ -249,32 +322,59 @@ export type Testimonial = {
   company: string;
   position: string;
   logo: string;
+  /** How the left-panel image should fit. Default: contain (logos). */
+  imageFit?: "contain" | "cover";
+  /** Extra CSS scale for logos with heavy padding in the source file. */
+  imageScale?: number;
 };
 
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "As a partner, AUTOPART challenges, supports and inspires our company and is fully committed to our employees and customers. Their innovative, solution-oriented product offering is designed to drive success in the industry and with our customers for many years to come.",
-    name: "Nick Bauer",
-    company: "FCP Euro, CT USA",
-    position: "President & Founder",
-    logo: "/images/customers/partner-a.svg",
-  },
-  {
-    quote:
-      "The AUTOPART training sessions provide us with manufacturer information straight from the experts - always practical and easy to understand.",
+      "The MEYLE training sessions provide us with manufacturer information straight from the experts - always practical and easy to understand.",
     name: "Frank Hofmann",
     company: "Leise GmbH & Co.KG",
-    position: "Sales Manager Automotive Parts | Training Coordination",
-    logo: "/images/customers/partner-b.svg",
+    position:
+      "Sales Manager Automotive Parts Head Office | Training Coordination",
+    logo: "/Generischer_Hintergrund_clean_Kundenlogos_Leise.jpg",
+    imageFit: "contain",
   },
   {
     quote:
-      "With the precise product data from AUTOPART, we can find spare parts quickly and reliably at any time. This saves us valuable time and significantly reduces downtime in our workshops.",
+      "With the precise product data from MEYLE, we can find spare parts quickly and reliably at any time. This saves us valuable time and significantly reduces downtime in our workshops.",
     name: "Sven Franke",
     company: "LKQ PV Automotive",
     position: "Sales House Manager",
-    logo: "/images/customers/partner-c.svg",
+    logo: "/Generischer_Hintergrund_PV_LKQ_Schrift_3_4.jpg",
+    imageFit: "contain",
+  },
+  {
+    quote:
+      "We often recommend the MEYLE HD line to our customers. These enhanced components ensure that drivers can use their cars for longer - which is both cost-effective and sustainable!",
+    name: "Shimizu Chikayuki",
+    company: "Hokusho Ltd.",
+    position: "President",
+    logo: "/Generischer_Hintergrund_clean_Kundenlogos_Palca_3_4.jpg",
+    imageFit: "contain",
+  },
+  {
+    quote:
+      "As a MEYLE partner, we've experienced first-hand the reliability and performance of their products. The HD range delivers superior durability, and the oil change kits make servicing quicker and more efficient — a real benefit to our customers. With MEYLE, it's not just replacement — it's an upgrade.",
+    name: "Habib Rehman",
+    company: "A-Z Motor Factors Halifax",
+    position: "Director",
+    logo: "/image.png",
+    imageFit: "contain",
+    imageScale: 2.6,
+  },
+  {
+    quote:
+      "As a partner, MEYLE challenges, supports and inspires our company and is fully committed to our employees and customers. Their innovative, solution-oriented product offering is designed to drive success in the industry and with our customers for many years to come.",
+    name: "Nick Bauer",
+    company: "FCP Euro, CT USA",
+    position: "President & Founder",
+    logo: "/Generischer_Hintergrund_clean_Kundenlogos_FCP_Euro.webp",
+    imageFit: "contain",
   },
 ];
 
@@ -335,7 +435,7 @@ export const footerColumns: FooterColumn[] = [
   {
     title: "Wholesale",
     items: [
-      { label: "Advantages for wholesalers", href: "/wholesale#advantages" },
+      { label: "Advantages for wholesalers", href: "/wholesale" },
       { label: "Consulting", href: "/wholesale#consulting" },
     ],
   },
@@ -350,8 +450,8 @@ export const footerColumns: FooterColumn[] = [
   {
     title: "About us",
     items: [
-      { label: "AUTOPART as an employer", href: "/career" },
-      { label: "AUTOPART worldwide", href: "/about/worldwide" },
+      { label: "MEYLE as an employer", href: "/career" },
+      { label: "MEYLE worldwide", href: "/about/worldwide" },
       { label: "Sustainability", href: "/about/sustainability" },
       { label: "Donation & funding partnerships", href: "/about/partnerships" },
       { label: "Events", href: "/about/events" },

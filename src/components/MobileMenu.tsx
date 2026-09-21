@@ -57,8 +57,8 @@ export function MobileMenu() {
                   />
                 </button>
                 {openSection === item.label
-                  ? item.columns.flatMap((column) =>
-                      column.items.map((child) => (
+                  ? item.columns.flatMap((column) => [
+                      ...column.items.map((child) => (
                         <Link
                           key={child.label}
                           href={child.href}
@@ -68,7 +68,27 @@ export function MobileMenu() {
                           {child.label}
                         </Link>
                       )),
-                    )
+                      ...(column.topics ?? []).map((topic) => (
+                        <Link
+                          key={topic.href + topic.title}
+                          href={topic.href}
+                          onClick={closeMenu}
+                          className="block py-2.5 text-sm uppercase tracking-[0.12em] text-white/55"
+                        >
+                          {topic.title}
+                        </Link>
+                      )),
+                      column.footerLink ? (
+                        <Link
+                          key={column.footerLink.href + column.footerLink.label}
+                          href={column.footerLink.href}
+                          onClick={closeMenu}
+                          className="block py-2.5 text-sm uppercase tracking-[0.12em] text-turquoise"
+                        >
+                          {column.footerLink.label}
+                        </Link>
+                      ) : null,
+                    ])
                   : null}
               </div>
             ))}
